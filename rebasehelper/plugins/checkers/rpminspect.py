@@ -121,7 +121,7 @@ class Rpminspect(BaseChecker):  # pylint: disable=abstract-method
             and data is the dict of count of OK/BAD/VERIFY checks.
 
         """
-        cmd = [cls.CMD, '-F', 'json']
+        cmd = [cls.CMD, '-c', '/usr/share/rpminspect/fedora.yaml', '-F', 'json']
         pkg_name = RpmHelper.split_nevra(os.path.basename(new_pkg))['name']
         cmd.append(old_pkg)
         cmd.append(new_pkg)
